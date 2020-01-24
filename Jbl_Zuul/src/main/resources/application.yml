@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gzn-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  routes: #路由  分配对应的服务消费者
+    eat: #名称自定义 标记的服务的名称
+      path: /jbl/**   #外界访问的名称
+      serviceId: jbl-consumer  #服务的名称 一般是指服务消费者的名称
